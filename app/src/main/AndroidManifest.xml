@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjeManag">
         <activity
+            android:name=".SignInActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
             android:name=".SignUpActivity"
             android:exported="true"
             android:screenOrientation="portrait"
