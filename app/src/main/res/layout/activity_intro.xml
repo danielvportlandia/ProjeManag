@@ -45,8 +45,7 @@
         android:textColor="@color/secondary_text_color"
         android:textSize="@dimen/intro_text_size" />
 
-    <!--TODO (Step 8: Button background files are added in the drawable folder.)-->
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_sign_in_intro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,7 +61,7 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/btn_text_size" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_sign_up_intro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,6 +74,6 @@
         android:paddingTop="@dimen/btn_paddingTopBottom"
         android:paddingBottom="@dimen/btn_paddingTopBottom"
         android:text="@string/sign_up"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="@dimen/btn_text_size" />
 </LinearLayout>
