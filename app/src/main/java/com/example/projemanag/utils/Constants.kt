@@ -8,10 +8,13 @@ import android.webkit.MimeTypeMap
 import androidx.core.app.ActivityCompat.startActivityForResult
 
 object Constants {
+    // USER
     const val USERS: String = "users"
     const val IMAGE : String = "image"
     const val NAME : String = "name"
     const val MOBILE : String = "mobile"
+    // BOARD
+    const val BOARDS : String = "boards"
     const val READ_STORAGE_PERMISSION_CODE = 1
     const val PICK_IMAGE_REQUEST_CODE = 2
 

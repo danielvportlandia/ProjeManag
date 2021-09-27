@@ -3,10 +3,8 @@ package com.example.projemanag.firebase
 import android.app.Activity
 import android.util.Log
 import android.widget.Toast
-import com.example.projemanag.activities.MainActivity
-import com.example.projemanag.activities.MyProfileActivity
-import com.example.projemanag.activities.SignInActivity
-import com.example.projemanag.activities.SignUpActivity
+import com.example.projemanag.activities.*
+import com.example.projemanag.models.Board
 import com.example.projemanag.models.User
 import com.example.projemanag.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
@@ -27,6 +25,23 @@ class FirestoreClass {
             }
             .addOnFailureListener { e ->
                 Log.e(activity.javaClass.simpleName, "Error writing document")
+            }
+    }
+
+    fun createBoard(activity: CreateBoardActivity, board: Board) {
+        mFireStore.collection(Constants.BOARDS)
+            .document()
+            .set(board, SetOptions.merge())
+            .addOnSuccessListener {
+                Log.i(activity.javaClass.simpleName, "Board created successfully")
+                Toast.makeText(activity, "Board created successfully", Toast.LENGTH_SHORT).show()
+                activity.boardCreatedSuccessfully()
+            }
+            .addOnFailureListener { e ->
+                Log.e(activity.javaClass.simpleName, "Error writing document", e)
+                activity.hideProgressDialog()
+                Toast.makeText(activity, "Board creation failed", Toast.LENGTH_SHORT).show()
+
             }
     }
 
