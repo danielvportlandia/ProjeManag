@@ -40,7 +40,7 @@ open class BoardItemsAdapter(private val context: Context, private var list: Arr
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return list.size
     }
 
     interface OnClickListener {
