@@ -62,12 +62,10 @@ open class TaskListItemsAdapter(
                 holder.itemView.ll_title_view.visibility = View.GONE
                 holder.itemView.cv_edit_task_list_name.visibility = View.VISIBLE
             }
-
             holder.itemView.ib_close_editable_view.setOnClickListener {
                 holder.itemView.ll_title_view.visibility = View.VISIBLE
                 holder.itemView.cv_edit_task_list_name.visibility = View.GONE
             }
-
             holder.itemView.ib_done_edit_list_name.setOnClickListener {
                 val listName = holder.itemView.et_edit_task_list_name.text.toString()
                 if (listName.isNotEmpty()) {
@@ -78,9 +76,26 @@ open class TaskListItemsAdapter(
                     Toast.makeText(context, "Please enter a list name.", Toast.LENGTH_SHORT).show()
                 }
             }
-
             holder.itemView.ib_delete_list.setOnClickListener {
                 alertDialogForDeleteList(position, model.title)
+            }
+            holder.itemView.tv_add_card.setOnClickListener {
+                holder.itemView.tv_add_card.visibility = View.GONE
+                holder.itemView.cv_add_card.visibility = View.VISIBLE
+            }
+            holder.itemView.ib_close_card_name.setOnClickListener {
+                holder.itemView.tv_add_card.visibility = View.VISIBLE
+                holder.itemView.cv_add_card.visibility = View.GONE
+            }
+            holder.itemView.ib_done_card_name.setOnClickListener {
+                val cardName = holder.itemView.et_card_name.text.toString()
+                if (cardName.isNotEmpty()) {
+                    if (context is TaskListActivity) {
+                        context.addCardToTaskList(position, cardName)
+                    }
+                } else {
+                    Toast.makeText(context, "Please enter a card name", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
