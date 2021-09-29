@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_user_place_holder.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/drawable/nav_header_main_background.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/drawable/shape_button_rounded.xml" value="0.22083333333333333" />
+        <entry key="app/src/main/res/drawable/shape_dialog_rounded.xml" value="0.22395833333333334" />
         <entry key="app/src/main/res/drawable/white_border_shape_button_rounded.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/activity_create_board.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.2046875" />
@@ -20,6 +21,7 @@
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/dialog_progress.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/dialog_search_member.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/item_board.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/item_card.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/item_member.xml" value="0.2078125" />
@@ -27,6 +29,7 @@
         <entry key="app/src/main/res/layout/main_content.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.2" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.37395833333333334" />
+        <entry key="app/src/main/res/menu/menu_add_member.xml" value="0.2078125" />
         <entry key="app/src/main/res/menu/menu_members.xml" value="0.2078125" />
       </map>
     </option>
