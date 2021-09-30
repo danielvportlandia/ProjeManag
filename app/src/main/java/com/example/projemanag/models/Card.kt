@@ -12,7 +12,8 @@ data class Card (
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,
-        parcel.createStringArrayList()!!
+        parcel.createStringArrayList()!!,
+        parcel.readString()!!,
     ) {
     }
 
@@ -20,6 +21,7 @@ data class Card (
         writeString(name)
         writeString(createdBy)
         writeStringList(assignedTo)
+        writeString(labelColor)
     }
 
     override fun describeContents(): Int {
