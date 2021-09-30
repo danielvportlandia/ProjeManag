@@ -46,6 +46,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-firestore:23.0.3'
     implementation 'com.google.firebase:firebase-storage:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
     // CIRCLE IMAGE VIEW
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     // GLIDE
