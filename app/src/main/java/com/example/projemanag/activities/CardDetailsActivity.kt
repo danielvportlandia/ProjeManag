@@ -51,6 +51,7 @@ class CardDetailsActivity : BaseActivity() {
         tv_select_members.setOnClickListener {
             membersListDialog()
         }
+        setupSelectedMembersList()
     }
 
     fun addUpdateTaskListSuccess() {
@@ -140,7 +141,20 @@ class CardDetailsActivity : BaseActivity() {
             resources.getString(R.string.str_select_member)
         ) {
             override fun onItemSelected(user: User, action: String) {
-                // TODO implement selected members functionality
+                if (action == Constants.SELECT) {
+                    if (!mBoardDetails.taskList[mTaskListPosition].cards[mCardPosition].assignedTo.contains(user.id)) {
+                        mBoardDetails.taskList[mTaskListPosition].cards[mCardPosition].assignedTo.add(user.id)
+                    }
+                    setupSelectedMembersList()
+                } else {
+                    mBoardDetails.taskList[mTaskListPosition].cards[mCardPosition].assignedTo.remove(user.id)
+                    for (i in mMembersDetailList.indices) {
+                        if (mMembersDetailList[i].id == user.id) {
+                            mMembersDetailList[i].selected = false
+                        }
+                    }
+                }
+                setupSelectedMembersList()
             }
         }
         listDialog.show()
@@ -153,6 +167,8 @@ class CardDetailsActivity : BaseActivity() {
             mBoardDetails.taskList[mTaskListPosition].cards[mCardPosition].assignedTo,
             mSelectedColor
         )
+        val taskList: ArrayList<Task> = mBoardDetails.taskList
+        taskList.removeAt(taskList.size - 1)
         mBoardDetails.taskList[mTaskListPosition].cards[mCardPosition] = card
         showProgressDialog(resources.getString(R.string.please_wait))
         FirestoreClass().addUpdateTaskList(this@CardDetailsActivity, mBoardDetails)
