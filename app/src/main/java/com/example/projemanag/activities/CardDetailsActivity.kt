@@ -59,7 +59,7 @@ class CardDetailsActivity : BaseActivity() {
         setupSelectedMembersList()
 
         mSelectedDueDateMilliSeconds = mBoardDetails.taskList[mTaskListPosition].cards[mCardPosition].dueDate
-        
+
         if (mSelectedDueDateMilliSeconds > 0) {
             val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
             val selectedDate = simpleDateFormat.format(Date(mSelectedDueDateMilliSeconds))
